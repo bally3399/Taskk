@@ -1,13 +1,12 @@
 public class BackToSender {
 
 
-    public double percentageRate(int numberOfParcelDelivered) {
+    public static double percentageRate(int numberOfParcelDelivered) {
         int numberOfPackagesAssignedDaily = 100;
-        double rate = ((double) numberOfParcelDelivered / numberOfPackagesAssignedDaily) * 100.0;
-        return rate;
+        return ((double) numberOfParcelDelivered / numberOfPackagesAssignedDaily) * 100.0;
     }
 
-    public double calculateDailyWage(double percentageRate) {
+    public static double calculateDailyWage(double percentageRate) {
         if(percentageRate < 0 || percentageRate > 100) throw new IllegalArgumentException("Input invalid");
         if(percentageRate >0 && percentageRate < 50){
             return getDailyWageFor(percentageRate, 160);
@@ -22,7 +21,7 @@ public class BackToSender {
         return percentageRate;
     }
 
-    public double getDailyWageFor(double percentageRate, int amountPerParcel){
+    public static double getDailyWageFor(double percentageRate, int amountPerParcel){
         int basePay = 5000;
         return percentageRate * amountPerParcel + basePay;
     }
