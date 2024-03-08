@@ -1,5 +1,5 @@
 public class SevenSegment {
-    private String[] segments = new String[7];
+    private String[] segments = new String[8];
     public  void splittingIntoArray(String binary) {
         for (int index = 0; index < segments.length; index++) {
             if (binary.charAt(index) != '0'  && binary.charAt(index) != '1') throw new IllegalArgumentException("invalid binary");
@@ -11,7 +11,7 @@ public class SevenSegment {
     }
 
     public void displaySeven() {
-        if (segments.length > 7){
+        if (segments.length > 8){
             throw new IllegalArgumentException("Bimbim");
         }
         try {
@@ -51,16 +51,5 @@ public class SevenSegment {
 
     }
 
-    private boolean isOn = true;
-    private final int switchValue = 0;
 
-    public boolean isOn() {
-        return isOn;
-    }
-
-    public void turnOn() {
-        if (switchValue == 1) {
-            isOn = true;
-        }
-    }
 }
